@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">MQuiz</string>
+    <string name="Correct">Yes</string>
+    <string name="Wrong">No</string>
+</resources>
