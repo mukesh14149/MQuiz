@@ -5,5 +5,5 @@
     <string name="Next_ques">Next</string>
     <string name="positive_message">Right Answer</string>
     <string name="negative_message">Wrong Answer</string>
-    <string name="query_message"> is a prime number?</string>
+    <string name="query_message">is a prime number?</string>
 </resources>
