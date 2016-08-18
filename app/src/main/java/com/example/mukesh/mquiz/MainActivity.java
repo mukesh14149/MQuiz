@@ -33,8 +33,8 @@ public class MainActivity extends AppCompatActivity {
         }
 
         //Button for Generating new query
-        Button button = (Button) findViewById(R.id.Next_ques);
-        button.setOnClickListener(new View.OnClickListener() {
+        Button next = (Button) findViewById(R.id.Next_ques);
+        next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 TextView text = (TextView) findViewById(R.id.Query);
@@ -44,8 +44,8 @@ public class MainActivity extends AppCompatActivity {
         });
 
         //Button for True
-        Button button2 = (Button) findViewById(R.id.Correct);
-        button2.setOnClickListener(new View.OnClickListener() {
+        Button correct = (Button) findViewById(R.id.Correct);
+        correct.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if(isprime(random_no)==1)
@@ -59,8 +59,8 @@ public class MainActivity extends AppCompatActivity {
         });
 
         //Button for false
-        Button button1 = (Button) findViewById(R.id.Wrong);
-        button1.setOnClickListener(new View.OnClickListener() {
+        Button wrong = (Button) findViewById(R.id.Wrong);
+        wrong.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if(isprime(random_no)==0)
@@ -96,8 +96,8 @@ public class MainActivity extends AppCompatActivity {
         return 1;
     }
 
-    public static void Query(TextView text, int ran, String query){
-        text.setText(ran+" "+query);
+    public static void Query(TextView text, int random_no, String query){
+        text.setText(random_no+" "+query);
     }
 
 }
