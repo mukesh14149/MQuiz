@@ -10,75 +10,81 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
-
-    public static TextView text;
-    public static int ran;
+    public static int random_no;
+    Context context = null;
+    int duration = Toast.LENGTH_SHORT;
+    CharSequence toast_text;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        text = (TextView) findViewById(R.id.Query);
+        context=getApplicationContext();
+
+
+        TextView text = (TextView) findViewById(R.id.Query);
         if(savedInstanceState!=null) {
             super.onRestoreInstanceState(savedInstanceState);
-            ran=savedInstanceState.getInt("store");
-            Query(ran);
-
-
+            random_no=savedInstanceState.getInt("Random_no");
+            Query(text, random_no, getString(R.string.query_message));
         }
         else{
-            ran=(int)(Math.random()*1000+1);
-            Query(ran);
+            random_no=getRandom_no();
+            Query(text, random_no, getString(R.string.query_message));
         }
-        Button button = (Button) findViewById(R.id.button2);
+
+        //Button for Generating new query
+        Button button = (Button) findViewById(R.id.Next_ques);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ran=(int)(Math.random()*1000+1);
-                Query(ran);
+                TextView text = (TextView) findViewById(R.id.Query);
+                random_no=getRandom_no();
+                Query(text, random_no, getString(R.string.query_message));
             }
         });
 
-
-        Button button1 = (Button) findViewById(R.id.button);
-        button1.setOnClickListener(new View.OnClickListener() {
+        //Button for True
+        Button button2 = (Button) findViewById(R.id.Correct);
+        button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Context context = getApplicationContext();
-                int duration = Toast.LENGTH_SHORT;
-                CharSequence text;
-                if(prime(ran)==0)
-                    text = "congo";
+                if(isprime(random_no)==1)
+                    toast_text = getString(R.string.positive_message);
                 else
-                    text = "sorry";
+                    toast_text = getString(R.string.negative_message);
 
-                Toast toast = Toast.makeText(context, text, duration);
+                Toast toast = Toast.makeText(context, toast_text, duration);
                 toast.show();
             }
         });
 
-
-        Button button2 = (Button) findViewById(R.id.button3);
-        button2.setOnClickListener(new View.OnClickListener() {
+        //Button for false
+        Button button1 = (Button) findViewById(R.id.Wrong);
+        button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Context context = getApplicationContext();
-                int duration = Toast.LENGTH_SHORT;
-                CharSequence text;
-                if(prime(ran)==1)
-                    text = "congo";
+                if(isprime(random_no)==0)
+                    toast_text = getString(R.string.positive_message);
                 else
-                    text = "sorry";
-
-                Toast toast = Toast.makeText(context, text, duration);
+                    toast_text = getString(R.string.negative_message);
+                Toast toast = Toast.makeText(context, toast_text, duration);
                 toast.show();
             }
         });
 
     }
 
+    @Override
+    public void onSaveInstanceState(Bundle savedInstanceState) {
+        savedInstanceState.putInt("Random_no", random_no);
+        super.onSaveInstanceState(savedInstanceState);
+    }
 
+    public static int getRandom_no(){
+        return (int)(Math.random()*1000+1);
+    }
 
-    public static int prime(int n){
+    public static int isprime(int n){
         if(n==1)
             return 1;
 
@@ -86,20 +92,12 @@ public class MainActivity extends AppCompatActivity {
             if(n%i==0){
                 return 0;
             }
-
         }
         return 1;
     }
-    public static void Query(int ran){
 
-        text.setText(ran+"query");
-    }
-
-    @Override
-    public void onSaveInstanceState(Bundle savedInstanceState) {
-
-        savedInstanceState.putInt("store", ran);
-        super.onSaveInstanceState(savedInstanceState);
+    public static void Query(TextView text, int ran, String query){
+        text.setText(ran+" "+query);
     }
 
 }

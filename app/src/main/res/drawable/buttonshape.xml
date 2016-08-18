@@ -9,7 +9,6 @@
         android:startColor="#E8E8E8"
         android:endColor="#000000"
         />
-
     <size
         android:width="270dp"
         android:height="60dp"
