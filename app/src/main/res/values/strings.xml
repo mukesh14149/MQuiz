@@ -6,4 +6,12 @@
     <string name="positive_message">Right Answer</string>
     <string name="negative_message">Wrong Answer</string>
     <string name="query_message">is a prime number?</string>
+    <string name="get_hint">Show Hint</string>
+    <string name="get_cheat">Show Cheat</string>
+    <string name="hint_msg">A Prime Number can be divided evenly only by 1, or itself And it must be a whole number greater than 1. Ex:- 5 can only be divided evenly by 1 or 5, so it is a prime number.</string>
+    <string name="cheat_msg_yes">->Yes it is a prime no.</string>
+    <string name="cheat_msg_no">->No it is not a prime no.</string>
+    <string name="help_taken_cheat_hint">Hint and cheat taken</string>
+    <string name="help_taken_hint">Hint taken</string>
+    <string name="help_taken_cheat">cheat taken</string>
 </resources>

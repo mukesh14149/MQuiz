@@ -23,6 +23,16 @@
         style="@style/Option_Button"/>
 
     <Button
+        android:id="@+id/Hint"
+        android:text="Hint"
+        android:layout_below="@+id/Wrong"
+        style="@style/Option_Button"
+        android:layout_alignParentBottom="true"
+
+        android:layout_alignParentLeft="true"/>
+
+
+    <Button
         android:layout_width="@dimen/next_button_width"
         android:layout_height="@dimen/next_button_height"
         android:text="@string/Next_ques"
