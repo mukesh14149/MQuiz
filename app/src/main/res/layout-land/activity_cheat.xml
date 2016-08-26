@@ -7,22 +7,20 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.example.mukesh.mquiz.HintActivity">
+    tools:context="com.example.mukesh.mquiz.CheatActivity">
 
 
     <TextView
-        android:id="@+id/help_view_hint"
+        android:id="@+id/help_view_cheat"
         android:layout_centerHorizontal="true"
-        android:layout_height="@dimen/hint_activity_textview_port"
+        android:layout_height="@dimen/hint_activity_textview_land"
         style="@style/Query_View"/>
 
+
     <Button
-        android:id="@+id/ShowHint"
-        android:text="@string/get_hint"
-        android:layout_below="@id/help_view_hint"
+        android:id="@+id/ShowCheat"
+        android:text="@string/get_cheat"
+        android:layout_below="@id/help_view_cheat"
         style="@style/Option_Button"/>
-
-
-
 
 </RelativeLayout>

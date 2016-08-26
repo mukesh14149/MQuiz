@@ -6,41 +6,66 @@
     android:background="@drawable/background"
     tools:context="com.example.mukesh.mquiz.MainActivity">
 
+
     <TextView
         android:id="@+id/Query"
         style="@style/Query_View"/>
 
-    <Button
-        android:id="@+id/Correct"
-        android:text="@string/Correct"
-        android:layout_below="@+id/Query"
-        style="@style/Option_Button"/>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/layout_choice"
+        android:layout_below="@id/Query">
+        <Button
+            android:layout_width="@dimen/next_button_width"
+            android:layout_height="@dimen/next_button_height"
+            android:id="@+id/Correct"
+            android:text="@string/Correct"
+            android:layout_marginLeft="@dimen/activity_horizontal_margin_large"
+            style="@style/Option_Button"/>
 
-    <Button
-        android:id="@+id/Wrong"
-        android:text="@string/Wrong"
-        android:layout_below="@+id/Correct"
-        style="@style/Option_Button"/>
+        <Button
+            android:layout_width="@dimen/next_button_width"
+            android:layout_height="@dimen/next_button_height"
+            android:id="@+id/Wrong"
+            android:text="@string/Wrong"
+            android:layout_marginLeft="@dimen/activity_horizontal_margin"
+            style="@style/Option_Button"/>
 
-    <Button
-        android:id="@+id/Hint"
-        android:text="@string/hint"
-        android:layout_below="@+id/Wrong"
-        style="@style/Option_Button"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@+id/layout_choice"
+        android:layout_marginTop="@dimen/activity_horizontal_margin">
+        <Button
+            android:layout_width="@dimen/next_button_width"
+            android:layout_height="@dimen/next_button_height"
+            android:id="@+id/Hint"
+            android:text="@string/hint"
+            android:layout_marginLeft="@dimen/activity_horizontal_margin"
+            style="@style/Option_Button" />
+
+        <Button
+            android:layout_width="@dimen/next_button_width"
+            android:layout_height="@dimen/next_button_height"
+            android:id="@+id/Cheat"
+            android:text="@string/cheat"
+            android:layout_marginLeft="@dimen/activity_horizontal_margin"
+            style="@style/Option_Button" />
 
 
-    <Button
-        android:layout_width="@dimen/next_button_width"
-        android:layout_height="@dimen/next_button_height"
-        android:text="@string/Next_ques"
-        android:id="@+id/Next_ques"
-        style="@style/Option_Button"
-        android:layout_below="@+id/Wrong"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        <Button
+            android:layout_width="@dimen/next_button_width"
+            android:layout_height="@dimen/next_button_height"
+            android:text="@string/Next_ques"
+            android:id="@+id/Next_ques"
+            android:layout_marginLeft="@dimen/activity_horizontal_margin"
+            style="@style/Option_Button"
+             />
+    </LinearLayout>
+
 
 </RelativeLayout>

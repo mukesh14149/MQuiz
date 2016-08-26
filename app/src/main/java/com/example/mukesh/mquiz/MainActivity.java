@@ -83,11 +83,22 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                Intent intent=new Intent(getApplicationContext(),HintActivity.class);
-                intent.putExtra("Prime_no",Integer.toString(random_no));
                 startActivityForResult(intent, 1);
 
             }
         });
+
+        Button cheat = (Button) findViewById(R.id.Cheat);
+        cheat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(getApplicationContext(),CheatActivity.class);
+                intent.putExtra("Prime_no",Integer.toString(random_no));
+                startActivityForResult(intent, 2);
+
+            }
+        });
+
 
     }
 
@@ -95,13 +106,20 @@ public class MainActivity extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
-        if(requestCode==1){
-            if(resultCode==RESULT_OK&&data.getStringExtra("Press")!=null){
-                Toast toast = Toast.makeText(context, data.getStringExtra("Press"), duration);
-                toast.setGravity(Gravity.BOTTOM, 0, 0);
-                toast.show();
-            }
+        switch (requestCode) {
+            case 1:if(resultCode==RESULT_OK&&data.getStringExtra("Press")!=null){
+                        Toast toast = Toast.makeText(context, data.getStringExtra("Press"), duration);
+                        toast.setGravity(Gravity.BOTTOM, 0, 0);
+                        toast.show();
+                    }
+                    break;
+            case 2:if(resultCode==RESULT_OK&&data.getStringExtra("Press")!=null){
+                        Toast toast = Toast.makeText(context, data.getStringExtra("Press"), duration);
+                        toast.setGravity(Gravity.BOTTOM, 0, 0);
+                        toast.show();
+                    }
         }
+
     }
 
     @Override

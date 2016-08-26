@@ -7,7 +7,7 @@
 
 
     <TextView
-        android:id="@+id/help_view"
+        android:id="@+id/help_view_hint"
         android:layout_centerHorizontal="true"
         android:layout_height="@dimen/hint_activity_textview_land"
         style="@style/Query_View"/>
@@ -15,14 +15,10 @@
     <Button
         android:id="@+id/ShowHint"
         android:text="@string/get_hint"
-        android:layout_below="@id/help_view"
+        android:layout_below="@id/help_view_hint"
         style="@style/Option_Button"/>
 
-    <Button
-        android:id="@+id/ShowCheat"
-        android:text="@string/get_cheat"
-        android:layout_below="@id/ShowHint"
-        style="@style/Option_Button"/>
+
 
 
 </RelativeLayout>

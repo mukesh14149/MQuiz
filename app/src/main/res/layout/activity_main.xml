@@ -13,8 +13,10 @@
     <Button
         android:id="@+id/Correct"
         android:text="@string/Correct"
+        style="@style/Option_Button"
         android:layout_below="@+id/Query"
-        style="@style/Option_Button" />
+        android:layout_alignLeft="@+id/Wrong"
+        android:layout_alignStart="@+id/Wrong" />
 
     <Button
         android:id="@+id/Wrong"
@@ -30,13 +32,19 @@
         style="@style/Option_Button"/>
 
     <Button
+        android:id="@+id/Cheat"
+        android:text="@string/cheat"
+        android:layout_below="@+id/Hint"
+        style="@style/Option_Button"/>
+
+    <Button
         android:layout_width="@dimen/next_button_width"
         android:layout_height="@dimen/next_button_height"
         android:text="@string/Next_ques"
         android:id="@+id/Next_ques"
-        android:layout_below="@+id/Hint"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="@dimen/verticle_next_button_spacing"
-        style="@style/Option_Button"/>
+        style="@style/Option_Button"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
 
 </RelativeLayout>
