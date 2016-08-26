@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -55,6 +56,7 @@ public class MainActivity extends AppCompatActivity {
                     toast_text = getString(R.string.negative_message);
 
                 Toast toast = Toast.makeText(context, toast_text, duration);
+                toast.setGravity(Gravity.BOTTOM, 0, 0);
                 toast.show();
             }
         });
@@ -69,6 +71,7 @@ public class MainActivity extends AppCompatActivity {
                 else
                     toast_text = getString(R.string.negative_message);
                 Toast toast = Toast.makeText(context, toast_text, duration);
+                toast.setGravity(Gravity.BOTTOM, 0, 0);
                 toast.show();
             }
         });
@@ -95,6 +98,7 @@ public class MainActivity extends AppCompatActivity {
         if(requestCode==1){
             if(resultCode==RESULT_OK&&data.getStringExtra("Press")!=null){
                 Toast toast = Toast.makeText(context, data.getStringExtra("Press"), duration);
+                toast.setGravity(Gravity.BOTTOM, 0, 0);
                 toast.show();
             }
         }
