@@ -14,4 +14,5 @@
     <string name="help_taken_cheat_hint">Hint and cheat taken</string>
     <string name="help_taken_hint">Hint taken</string>
     <string name="help_taken_cheat">cheat taken</string>
+    <string name="Welcome_msg">Help Portal</string>
 </resources>

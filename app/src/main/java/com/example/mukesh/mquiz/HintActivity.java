@@ -20,9 +20,7 @@ public class HintActivity extends AppCompatActivity {
         hint_used=false;
         cheat_used=false;
         final TextView help_view=(TextView)findViewById(R.id.help_view);
-
-        help_view.setText("Help Portal");
-
+        help_view.setText(getString(R.string.Welcome_msg));
 
 
         Button button=(Button)findViewById(R.id.ShowHint);
@@ -34,8 +32,6 @@ public class HintActivity extends AppCompatActivity {
                 help_view.setText(getString(R.string.hint_msg));
             }
         });
-
-
 
 
         Button button1=(Button)findViewById(R.id.ShowCheat);
@@ -51,7 +47,6 @@ public class HintActivity extends AppCompatActivity {
                 else{
                     help_view.setText(a+getString(R.string.cheat_msg_no));
                 }
-
             }
         });
 
