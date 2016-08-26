@@ -24,11 +24,11 @@
 
     <Button
         android:id="@+id/Hint"
-        android:text="Hint"
+        android:text="@string/hint"
         android:layout_below="@+id/Wrong"
         style="@style/Option_Button"
+        android:layout_alignParentStart="true"
         android:layout_alignParentBottom="true"
-
         android:layout_alignParentLeft="true"/>
 
 

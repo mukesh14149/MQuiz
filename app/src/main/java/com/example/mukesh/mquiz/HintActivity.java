@@ -3,11 +3,10 @@ package com.example.mukesh.mquiz;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
+
 
 public class HintActivity extends AppCompatActivity {
 
@@ -39,14 +38,16 @@ public class HintActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 cheat_used=true;
+                String help_view_text=null;
                 Intent intent=getIntent();
                 int a=Integer.parseInt(intent.getStringExtra("Prime_no"));
                 if(isprime(a)==1){
-                    help_view.setText(a+getString(R.string.cheat_msg_yes));
+                    help_view_text=a+getString(R.string.cheat_msg_yes);
                 }
                 else{
-                    help_view.setText(a+getString(R.string.cheat_msg_no));
+                    help_view_text=a+getString(R.string.cheat_msg_no);
                 }
+                help_view.setText(help_view_text);
             }
         });
 
@@ -56,11 +57,11 @@ public class HintActivity extends AppCompatActivity {
     public void onBackPressed() {
         String help_taken=null;
         Intent intent=getIntent();
-        if(hint_used==true&&cheat_used==true)
+        if(hint_used&&cheat_used)
             help_taken=getString(R.string.help_taken_cheat_hint);
-        else if(hint_used==true)
+        else if(hint_used)
             help_taken=getString(R.string.help_taken_hint);
-        else if(cheat_used==true)
+        else if(cheat_used)
             help_taken=getString(R.string.help_taken_cheat);
 
         intent.putExtra("Press",help_taken);

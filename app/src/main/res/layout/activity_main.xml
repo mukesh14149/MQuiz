@@ -25,7 +25,7 @@
 
     <Button
         android:id="@+id/Hint"
-        android:text="Hint"
+        android:text="@string/hint"
         android:layout_below="@+id/Wrong"
         style="@style/Option_Button"/>
 

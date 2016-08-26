@@ -123,7 +123,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public static void Query(TextView text, int random_no, String query){
-        text.setText(random_no+" "+query);
+        String ques=random_no+" "+query;
+        text.setText(ques);
     }
 
 }
